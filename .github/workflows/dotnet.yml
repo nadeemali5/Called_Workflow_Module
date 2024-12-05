@@ -7,6 +7,111 @@ on:
         description: 'The branch or tag to build'
         required: true
         type: string
+      publishWebProjects:
+        required: true
+        type: string
+      projects:
+        required: true
+        type: string
+      custom:
+        required: true
+        type: string
+      arguments:
+        required: true
+        type: string
+      publishTestResults:
+        required: true
+        type: string
+      testRunTitle:
+        required: true
+        type: string
+      zipAfterPublish:
+        required: true
+        type: string
+      modifyOutputPath:
+        required: true
+        type: string
+      selectOrConfig:
+        required: true
+        type: string
+      feedRestore:
+        required: true
+        type: string
+      includeNuGetOrg:
+        required: true
+        type: string
+      nugetConfigPath:
+        required: true
+        type: string
+      externalEndpoints:
+        required: true
+        type: string
+      noCache:
+        required: true
+        type: string
+      packagesDirectory:
+        required: true
+        type: string
+      verbosityRestore:
+        required: true
+        type: string
+      searchPatternPush:
+        required: true
+        type: string
+      nuGetFeedType:
+        required: true
+        type: string
+      feedPublish:
+        required: true
+        type: string
+      publishPackageMetadata:
+        required: true
+        type: string
+      externalEndpoint:
+        required: true
+        type: string
+      searchPatternPack:
+        required: true
+        type: string
+      configurationToPack:
+        required: true
+        type: string
+      outputDir:
+        required: true
+        type: string
+      nobuild:
+        required: true
+        type: string
+      includesymbols:
+        required: true
+        type: string
+      includesource:
+        required: true
+        type: string
+      versioningScheme:
+        required: true
+        type: string
+      versionEnvVar:
+        required: true
+        type: string
+      requestedMajorVersion:
+        required: true
+        type: number
+      requestedMinorVersion:
+        required: true
+        type: number
+      requestedPatchVersion:
+        required: true
+        type: number
+      buildProperties:
+        required: true
+        type: string
+      verbosityPack:
+        required: true
+        type: string
+      workingDirectory:
+        required: true
+        type: string      
 
 env:
   Configuration: 'Release'  # Define Configuration variable here

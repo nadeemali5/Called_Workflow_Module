@@ -1,12 +1,12 @@
 name: .NET 6 Build, Restore, and Run
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      branch_or_tag:
+        description: 'The branch or tag to build'
+        required: true
+        type: string
 
 env:
   Configuration: 'Release'  # Define Configuration variable here

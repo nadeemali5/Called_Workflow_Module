@@ -1,12 +1,12 @@
 name: Node.js CI.
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  workflow_call:
+    inputs:
+      branch_or_tag:
+        description: 'The branch or tag to build'
+        required: true
+        type: string
 
 jobs:
   build:

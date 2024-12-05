@@ -1,12 +1,15 @@
+
+# below is the running maven yml
+
 name: Java CI with Maven
 
 on:
-  workflow_call:
-    inputs:
-      branch_or_tag:
-        description: 'The branch or tag to build'
-        required: true
-        type: string
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   build:
@@ -21,19 +24,6 @@ jobs:
         choco install openjdk11 -y
         $env:JAVA_HOME="C:\Program Files\AdoptOpenJDK\jdk-11.0.12.7-hotspot"
         $env:PATH="$env:JAVA_HOME\bin;$env:PATH"
-
-    - name: Download Secure File
-      env:
-        API_TOKEN: ${{ secrets.UMB_SECRETCODE }}
-      run: |
-        
-        $url = "http://hexa-umb-az-dev/DefaultCollection/_git/DotNet8?path=%2FTestSecureFile&version=GBmain"
-        $headers = @{
-          "Authorization" = "Bearer $env:API_TOKEN"
-        }
-        
-        $outputPath = "$env:TEMP\secure-file.zip"
-        Invoke-WebRequest -Uri $url -Headers $headers -OutFile $outputPath
 
     - name: Build with Maven
       run: mvn clean install

@@ -26,13 +26,13 @@ jobs:
       env:
         API_TOKEN: ${{ secrets.UMB_SECRETCODE }}
       run: |
-        # Replace with an actual file URL for testing
-        $url = "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-zip-file.zip"  # Valid test file
+        
+        $url = "http://hexa-umb-az-dev/DefaultCollection/_git/DotNet8?path=%2FTestSecureFile&version=GBmain"
         $headers = @{
           "Authorization" = "Bearer $env:API_TOKEN"
         }
-        # Use a valid temporary path
-        $outputPath = "$env:TEMP\secure-file.zip"  # Use a valid temporary directory on Windows
+        
+        $outputPath = "$env:TEMP\secure-file.zip"
         Invoke-WebRequest -Uri $url -Headers $headers -OutFile $outputPath
 
     - name: Build with Maven

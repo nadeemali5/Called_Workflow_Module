@@ -111,7 +111,10 @@ on:
         type: string
       workingDirectory:
         required: true
-        type: string      
+        type: string
+      task:
+        required: true
+        type: string
 
 env:
   Configuration: 'Release'  # Define Configuration variable here

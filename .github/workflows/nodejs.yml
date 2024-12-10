@@ -31,6 +31,11 @@ jobs:
           cd ${{ github.workspace }}  # Ensure the working directory is correct
           npm install --verbose=true --customCommand=install --customRegistry=useNpmrc --customFeed="" --customEndpoint="" --publishRegistry=useExternalRegistry --publishFeed="" --publishPackageMetadata=true --publishEndpoint=""
 
+      - name: npm build step
+        run: |
+          cd ${{ github.workspace }}
+          npm build --workingDir="" --verbose=false --customCommand='run build' --customRegistry=useNpmrc --customFeed="" --customEndpoint="" --publishRegistry=useExternalRegistry --publishFeed="" --publishPackageMetadata=true --publishEndpoint=""
+
       - name: Run the application
         run: |
           cd ${{ github.workspace }}  # Ensure the working directory is correct

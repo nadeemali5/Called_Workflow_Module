@@ -35,8 +35,3 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           npm build --workingDir="" --verbose=false --customCommand='run build' --customRegistry=useNpmrc --customFeed="" --customEndpoint="" --publishRegistry=useExternalRegistry --publishFeed="" --publishPackageMetadata=true --publishEndpoint=""
-
-      - name: Run the application
-        run: |
-          cd ${{ github.workspace }}  # Ensure the working directory is correct
-          node index.js

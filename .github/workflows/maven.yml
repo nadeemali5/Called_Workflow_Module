@@ -27,9 +27,3 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-
-    - name: Run tests with Maven
-      run: mvn test
-
-    - name: Print Maven Version
-      run: mvn --version

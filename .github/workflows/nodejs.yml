@@ -35,3 +35,8 @@ jobs:
         run: |
           cd ${{ github.workspace }}
           npm build --workingDir="" --verbose=false --customCommand='run build' --customRegistry=useNpmrc --customFeed="" --customEndpoint="" --publishRegistry=useExternalRegistry --publishFeed="" --publishPackageMetadata=true --publishEndpoint=""
+
+      - name: npm run build step custom
+        run: |
+          cd ${{ github.workspace }}
+          npm build --command=custom --workingDir="" --verbose=false --customCommand='run build' --customRegistry=useNpmrc --customFeed="" --customEndpoint="" --publishRegistry=useExternalRegistry --publishFeed="" --publishPackageMetadata=true --publishEndpoint=""         
